@@ -1,0 +1,17 @@
+{
+  "StrategicMap_UI/POPUP_REWARDS": "НАГОРОДИ",
+  "StrategicMap_UI/POPUP_REWARDS_1": "ЕФЕКТ",
+  "StrategicMap_UI/STRATEGYMAPBUTTON_TITLE": "Мапа світу",
+  "StrategicMap_UI/STRATEGYMAPBUTTON_DES": "Натисніть, щоб повернутися на мапу світу",
+  "StrategicMap_UI/DISBAND_BUTTON_LOCKED": "Зараз цю експедицію не можна розпустити.",
+  "StrategicMap_UI/LOCATION_STATE_1": "Місце для поселення",
+  "StrategicMap_UI/SCOUT_SEND_INTERACTION": "Відправити розвідників",
+  "StrategicMap_UI/CALPULLI_SEND_INTERACTION": "Відправити поселенців",
+  "StrategicMap_UI/NO_GROUP_INTERACTION": "Немає груп типу {[EXPEDITION_TYPE]}",
+  "StrategicMap_UI/NO_AVAILABLE_GROUP_INTERACTION": "Немає доступних груп типу {[EXPEDITION_TYPE]}",
+  "StrategicMap_UI/GROUP_INTERACTION_GROUP_ONWAY": "{[EXPEDITION_TYPE]} уже в дорозі",
+  "StrategicMap_UI/NO_GROUP_SELECTED": "Не вибрано групу типу {[EXPEDITION_TYPE]}",
+  "StrategicMap_UI/LOCKEDCONTENT_LOCATION_TITLE": "???",
+  "StrategicMap_UI/LOCKEDCONTENT_LOCATION_DESCRIPTION": "У цій місцевості вирує страшна піщана буря. Вирушати сюди надто ризиковано.\n\nВона точно вщухне після виходу повної версії гри. Нам теж не терпиться, щоб ви відвідали це місце.",
+  "StrategicMap_UI/LOCKEDCONTENT_LOCATION_TOOLTIP": "Ця локація <b>недоступна</b> в поточній тестовій версії."
+}

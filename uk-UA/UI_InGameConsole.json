@@ -1,0 +1,13 @@
+{
+  "UI_InGameConsole/NOTIFICATION_EXPEDITION_ARRIVED": "<b>{[ExpeditionName]}</b> прибула до <b>{[LocationName]}</b>",
+  "UI_InGameConsole/NOTIFICATION_EXPEDITION_EXPLORED": "<b>{[ExpeditionName]}</b> очікує на вказівки",
+  "UI_InGameConsole/NOTIFICATION_BUILDING_BUILT": "Будівництво завершено: <b>{[BuildingName]}</b>",
+  "UI_InGameConsole/NOTIFICATION_BUILDING_DESTROYED": "<b>{[BuildingName]}</b> знесено",
+  "UI_InGameConsole/NOTIFICATION_WHIM_APPEARED": "Мешканці хочуть: <b>{[WhimName]}</b>",
+  "UI_InGameConsole/NOTIFICATION_REFUGEES_TENT_SPAWNED": "З'явився намет новоприбулих!",
+  "UI_InGameConsole/NOTIFICATION_HOMELESS_START": "У поселенні є безхатьки!",
+  "UI_InGameConsole/NOTIFICATION_NEED_HUNGER": "Мешканці <b>голодують</b>!",
+  "UI_InGameConsole/NOTIFICATION_NEED_WATER": "Мешканці <b>не мають доступу до води</b>!",
+  "UI_InGameConsole/NOTIFICATION_WHIM_TOACCEPT": "У <b>{[HouseName]}</b> з'явилася нова забаганка.",
+  "UI_InGameConsole/NOTIFICATION_WHIM_DONE": "Забаганку <b>{[HouseName]}</b> виконано."
+}
