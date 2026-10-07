@@ -12,9 +12,13 @@ using UnityEngine;
 
 namespace WWP.Ukrainian
 {
-    [BepInPlugin("games.trembita.wwp.ukrainian", "Wild West Pioneers Ukrainian", "1.0.0")]
+    [BepInPlugin(PluginGuid, PluginName, PluginVersion)]
     public class Plugin : BasePlugin
     {
+        internal const string PluginGuid = "games.trembita.wwp.ukrainian";
+        internal const string PluginName = "Wild West Pioneers Ukrainian";
+        internal const string PluginVersion = "1.0.0";
+
         internal static ManualLogSource PluginLogger;
         internal static ConfigFile PluginConfig;
         internal static ConfigEntry<bool> UseUkrainian;
@@ -26,7 +30,8 @@ namespace WWP.Ukrainian
 
             UseUkrainian = Config.Bind("Localization", "UseUkrainian", false, "Remember Ukrainian as the selected text language.");
 
-            Log.LogInfo("WWP Ukrainian plugin loaded.");
+            Log.LogInfo($"{PluginName} v{PluginVersion} loaded.");
+            Log.LogInfo($"Game version: {Application.version}");
             Log.LogInfo($"Saved Ukrainian preference: {UseUkrainian.Value}");
 
             AddComponent<UkrainianLocalizationController>();

@@ -1,0 +1,19 @@
+{
+  "name": "Wild West Pioneers Ukrainian",
+  "version": "1.0.0",
+  "pluginGuid": "games.trembita.wwp.ukrainian",
+  "steamAppId": 3222640,
+  "language": {
+    "name": "Ukrainian",
+    "code": "uk",
+    "locale": "uk-UA"
+  },
+  "localization": {
+    "domains": 39,
+    "keys": 7036
+  },
+  "requires": {
+    "bepInEx": "BepInEx 6 IL2CPP x64",
+    "testedBuild": "6.0.0-be.788+5b766a3"
+  }
+}

@@ -6,56 +6,58 @@
     <RootNamespace>WWP.Ukrainian</RootNamespace>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>disable</Nullable>
+
+    <GameDir Condition="'$(GameDir)' == ''">D:\SteamLibrary\steamapps\common\Wild West Pioneers</GameDir>
   </PropertyGroup>
 
   <ItemGroup>
     <Reference Include="BepInEx.Core">
-      <HintPath>D:\SteamLibrary\steamapps\common\Wild West Pioneers\BepInEx\core\BepInEx.Core.dll</HintPath>
+      <HintPath>$(GameDir)\BepInEx\core\BepInEx.Core.dll</HintPath>
       <Private>false</Private>
     </Reference>
 
     <Reference Include="BepInEx.Unity.IL2CPP">
-      <HintPath>D:\SteamLibrary\steamapps\common\Wild West Pioneers\BepInEx\core\BepInEx.Unity.IL2CPP.dll</HintPath>
+      <HintPath>$(GameDir)\BepInEx\core\BepInEx.Unity.IL2CPP.dll</HintPath>
       <Private>false</Private>
     </Reference>
 
     <Reference Include="Il2CppInterop.Runtime">
-      <HintPath>D:\SteamLibrary\steamapps\common\Wild West Pioneers\BepInEx\core\Il2CppInterop.Runtime.dll</HintPath>
+      <HintPath>$(GameDir)\BepInEx\core\Il2CppInterop.Runtime.dll</HintPath>
       <Private>false</Private>
     </Reference>
 
     <Reference Include="Il2Cppmscorlib">
-      <HintPath>D:\SteamLibrary\steamapps\common\Wild West Pioneers\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
+      <HintPath>$(GameDir)\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
       <Private>false</Private>
     </Reference>
 
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>D:\SteamLibrary\steamapps\common\Wild West Pioneers\BepInEx\interop\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>$(GameDir)\BepInEx\interop\UnityEngine.CoreModule.dll</HintPath>
       <Private>false</Private>
     </Reference>
 
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:\SteamLibrary\steamapps\common\Wild West Pioneers\BepInEx\interop\UnityEngine.UI.dll</HintPath>
+      <HintPath>$(GameDir)\BepInEx\interop\UnityEngine.UI.dll</HintPath>
       <Private>false</Private>
     </Reference>
 
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:\SteamLibrary\steamapps\common\Wild West Pioneers\BepInEx\interop\Unity.TextMeshPro.dll</HintPath>
+      <HintPath>$(GameDir)\BepInEx\interop\Unity.TextMeshPro.dll</HintPath>
       <Private>false</Private>
     </Reference>
 
     <Reference Include="I2Loc">
-      <HintPath>D:\SteamLibrary\steamapps\common\Wild West Pioneers\BepInEx\interop\I2Loc.dll</HintPath>
+      <HintPath>$(GameDir)\BepInEx\interop\I2Loc.dll</HintPath>
       <Private>false</Private>
     </Reference>
 
     <Reference Include="Core">
-      <HintPath>D:\SteamLibrary\steamapps\common\Wild West Pioneers\BepInEx\interop\Core.dll</HintPath>
+      <HintPath>$(GameDir)\BepInEx\interop\Core.dll</HintPath>
       <Private>false</Private>
     </Reference>
 
     <Reference Include="UI">
-      <HintPath>D:\SteamLibrary\steamapps\common\Wild West Pioneers\BepInEx\interop\UI.dll</HintPath>
+      <HintPath>$(GameDir)\BepInEx\interop\UI.dll</HintPath>
       <Private>false</Private>
     </Reference>
   </ItemGroup>
