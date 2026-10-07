@@ -6,58 +6,57 @@
     <RootNamespace>WWP.Ukrainian</RootNamespace>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>disable</Nullable>
-
-    <GameDir Condition="'$(GameDir)' == ''">D:\SteamLibrary\steamapps\common\Wild West Pioneers</GameDir>
+    <ReferenceDir>$(MSBuildThisFileDirectory)..\..\lib</ReferenceDir>
   </PropertyGroup>
 
   <ItemGroup>
     <Reference Include="BepInEx.Core">
-      <HintPath>$(GameDir)\BepInEx\core\BepInEx.Core.dll</HintPath>
+      <HintPath>$(ReferenceDir)\BepInEx.Core.dll</HintPath>
       <Private>false</Private>
     </Reference>
 
     <Reference Include="BepInEx.Unity.IL2CPP">
-      <HintPath>$(GameDir)\BepInEx\core\BepInEx.Unity.IL2CPP.dll</HintPath>
+      <HintPath>$(ReferenceDir)\BepInEx.Unity.IL2CPP.dll</HintPath>
       <Private>false</Private>
     </Reference>
 
     <Reference Include="Il2CppInterop.Runtime">
-      <HintPath>$(GameDir)\BepInEx\core\Il2CppInterop.Runtime.dll</HintPath>
+      <HintPath>$(ReferenceDir)\Il2CppInterop.Runtime.dll</HintPath>
       <Private>false</Private>
     </Reference>
 
     <Reference Include="Il2Cppmscorlib">
-      <HintPath>$(GameDir)\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
+      <HintPath>$(ReferenceDir)\Il2Cppmscorlib.dll</HintPath>
       <Private>false</Private>
     </Reference>
 
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>$(GameDir)\BepInEx\interop\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>$(ReferenceDir)\UnityEngine.CoreModule.dll</HintPath>
       <Private>false</Private>
     </Reference>
 
     <Reference Include="UnityEngine.UI">
-      <HintPath>$(GameDir)\BepInEx\interop\UnityEngine.UI.dll</HintPath>
+      <HintPath>$(ReferenceDir)\UnityEngine.UI.dll</HintPath>
       <Private>false</Private>
     </Reference>
 
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>$(GameDir)\BepInEx\interop\Unity.TextMeshPro.dll</HintPath>
+      <HintPath>$(ReferenceDir)\Unity.TextMeshPro.dll</HintPath>
       <Private>false</Private>
     </Reference>
 
     <Reference Include="I2Loc">
-      <HintPath>$(GameDir)\BepInEx\interop\I2Loc.dll</HintPath>
+      <HintPath>$(ReferenceDir)\I2Loc.dll</HintPath>
       <Private>false</Private>
     </Reference>
 
     <Reference Include="Core">
-      <HintPath>$(GameDir)\BepInEx\interop\Core.dll</HintPath>
+      <HintPath>$(ReferenceDir)\Core.dll</HintPath>
       <Private>false</Private>
     </Reference>
 
     <Reference Include="UI">
-      <HintPath>$(GameDir)\BepInEx\interop\UI.dll</HintPath>
+      <HintPath>$(ReferenceDir)\UI.dll</HintPath>
       <Private>false</Private>
     </Reference>
   </ItemGroup>

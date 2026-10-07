@@ -1,6 +1,6 @@
 # Wild West Pioneers - Ukrainian Localization
 
-Неофіційна повна українська локалізація гри **Wild West Pioneers**.
+Неофіційна українська локалізація гри **Wild West Pioneers**.
 
 ## Покриття
 
@@ -10,24 +10,33 @@
 - українська мова додається безпосередньо до списку мов у грі
 - вибрана українська мова зберігається між запусками
 
-## Вимоги
+## Вимоги для гравців
 
 - Wild West Pioneers у Steam
 - Steam App ID: `3222640`
 - Windows x64
 - BepInEx 6 IL2CPP x64
 
-Перевірена збірка BepInEx:
+### BepInEx
 
-`BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.788+5b766a3`
+Сторінка збірок BepInEx:
+
+https://builds.bepinex.dev/projects/bepinex_be
+
+Локалізація перевірена з цією збіркою:
+
+[BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.788+5b766a3](https://builds.bepinex.dev/projects/bepinex_be/788/BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.788%2B5b766a3.zip)
+
+Рекомендується використовувати саме цю версію, оскільки робота локалізації з іншими збірками BepInEx не перевірялася.
 
 ## Встановлення
 
-1. Встановіть BepInEx 6 IL2CPP x64 у кореневу папку гри.
-2. Один раз запустіть гру, щоб BepInEx створив необхідні каталоги, після чого закрийте гру.
-3. Розпакуйте релізний архів `WWP.Ukrainian_v1.0.0.zip` у кореневу папку Wild West Pioneers.
-4. Запустіть гру.
-5. Відкрийте налаштування мови та виберіть `Ukrainian`.
+1. Завантажте перевірену версію [BepInEx 6 IL2CPP x64](https://builds.bepinex.dev/projects/bepinex_be/788/BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.788%2B5b766a3.zip).
+2. Розпакуйте BepInEx у кореневу папку Wild West Pioneers.
+3. Один раз запустіть гру, щоб BepInEx створив необхідні файли та IL2CPP interop assemblies, після чого закрийте гру.
+4. Розпакуйте релізний архів `WWP.Ukrainian_v1.0.0.zip` у кореневу папку Wild West Pioneers.
+5. Запустіть гру.
+6. Відкрийте налаштування мови та виберіть `Ukrainian`.
 
 Після встановлення:
 
@@ -89,6 +98,73 @@ BepInEx/LogOutput.log
 
 Нові ключі після оновлення гри не блокують роботу мода: відсутні переклади залишаються мовою оригіналу, а покриття видно в логах.
 
+## Розробка
+
+Для компіляції плагіна потрібні BepInEx та IL2CPP interop assemblies, згенеровані для Wild West Pioneers.
+
+Ці DLL не зберігаються в репозиторії. Частина з них належить BepInEx, а частина генерується з assemblies гри. Тому перед першою збіркою розробнику потрібно один раз підготувати локальні build references.
+
+### Підготовка середовища розробки
+
+1. Встановіть BepInEx у Wild West Pioneers.
+2. Один раз запустіть гру, щоб BepInEx згенерував папку `BepInEx/interop`.
+3. Запустіть із кореня репозиторію:
+
+```powershell
+.\scripts\setup-dev.ps1 -GameDir "D:\SteamLibrary\steamapps\common\Wild West Pioneers"
+```
+
+Скрипт скопіює потрібні DLL у локальну папку:
+
+```text
+lib/
+```
+
+Папка `lib/` ігнорується Git і не потрапляє до репозиторію.
+
+Цю операцію потрібно повторити лише після оновлення гри, BepInEx або IL2CPP interop assemblies.
+
+### Перевірка локалізації
+
+```powershell
+.\scripts\validate-localization.ps1
+```
+
+Скрипт перевіряє:
+
+- наявність усіх 39 доменів;
+- загальну кількість 7036 ключів;
+- відповідність ключа домену файла;
+- дублікати;
+- `null`-значення;
+- заборонені довгі тире.
+
+### Збирання релізу
+
+Після одноразового виконання `setup-dev.ps1` шлях до встановленої гри для звичайної збірки більше не потрібен.
+
+Запустіть:
+
+```powershell
+.\scripts\build-release.ps1
+```
+
+Готовий архів буде створено тут:
+
+```text
+dist/WWP.Ukrainian_v1.0.0.zip
+```
+
+Архів містить тільки файли, необхідні користувачу:
+
+```text
+BepInEx/
+└── plugins/
+    └── WWP.Ukrainian/
+        ├── WWP.Ukrainian.dll
+        └── uk-UA/
+```
+
 ## Структура репозиторію
 
 ```text
@@ -97,41 +173,20 @@ WWP.Ukrainian/
 ├── localization/
 │   └── uk-UA/
 ├── scripts/
+│   ├── build-release.ps1
+│   ├── setup-dev.ps1
+│   └── validate-localization.ps1
 ├── src/
 │   └── WWP.Ukrainian/
+│       ├── Plugin.cs
+│       └── WWP.Ukrainian.csproj
 ├── CHANGELOG.md
 ├── CONTRIBUTING.md
 ├── README.md
 └── manifest.json
 ```
 
-## Збирання
-
-Запустіть із кореня репозиторію:
-
-```powershell
-.\scripts\build-release.ps1
-```
-
-Якщо гра встановлена в іншому каталозі:
-
-```powershell
-.\scripts\build-release.ps1 -GameDir "E:\SteamLibrary\steamapps\common\Wild West Pioneers"
-```
-
-Можна також задати змінну середовища:
-
-```powershell
-$env:WWP_GAME_DIR = "E:\SteamLibrary\steamapps\common\Wild West Pioneers"
-```
-
-## Перевірка локалізації
-
-```powershell
-.\scripts\validate-localization.ps1
-```
-
-Скрипт перевіряє кількість файлів і ключів, відповідність доменів, дублікати, `null`-значення та заборонені довгі тире.
+Локальна папка `lib/`, створена `setup-dev.ps1`, до Git не додається.
 
 ## Правові зауваження
 
