@@ -111,7 +111,7 @@ BepInEx/LogOutput.log
 3. Запустіть із кореня репозиторію:
 
 ```powershell
-.\scripts\setup-dev.ps1 -GameDir "D:\SteamLibrary\steamapps\common\Wild West Pioneers"
+.\scripts\setup-dev.cmd -GameDir "D:\SteamLibrary\steamapps\common\Wild West Pioneers"
 ```
 
 Скрипт скопіює потрібні DLL у локальну папку:
@@ -127,7 +127,7 @@ lib/
 ### Перевірка локалізації
 
 ```powershell
-.\scripts\validate-localization.ps1
+.\scripts\validate-localization.cmd
 ```
 
 Скрипт перевіряє:
@@ -146,7 +146,7 @@ lib/
 Запустіть:
 
 ```powershell
-.\scripts\build-release.ps1
+.\scripts\build-release.cmd
 ```
 
 Готовий архів буде створено тут:
@@ -173,8 +173,11 @@ WWP.Ukrainian/
 ├── localization/
 │   └── uk-UA/
 ├── scripts/
+│   ├── build-release.cmd
 │   ├── build-release.ps1
+│   ├── setup-dev.cmd
 │   ├── setup-dev.ps1
+│   ├── validate-localization.cmd
 │   └── validate-localization.ps1
 ├── src/
 │   └── WWP.Ukrainian/
